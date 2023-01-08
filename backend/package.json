@@ -1,0 +1,33 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Projeto de cadastro e visualização de clínicas de saúde mental para ajudar alunos da Trybe",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "jest --config ./jest.config.js --runInBand --detectOpenHandles",
+    "test:mocha": "src/controllers mocha tests/unit/**/*.js --exit",
+    "dev": "nodemon ./src/server.js",
+    "start": "node ./src/server.js",
+    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json . --ext .js, .jsx"
+  },
+  "keywords": [],
+  "author": "Rafael França <rafaelftourinho@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "joi": "^17.7.0",
+    "mysql2": "^2.3.3"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "eslint": "^8.31.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "mocha": "^10.2.0",
+    "nodemon": "^2.0.20",
+    "sinon": "^15.0.1",
+    "sinon-chai": "^3.7.0"
+  }
+}

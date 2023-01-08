@@ -1,0 +1,15 @@
+.container {
+  max-width: 1000px;
+  /* width: 100vw; */
+  margin: 2rem auto;
+  padding: 0 2rem;
+  font-size: 25px;
+}
+
+.App {
+  text-align: center;
+}
+
+.App h1 {
+  margin-top: 30px;
+}

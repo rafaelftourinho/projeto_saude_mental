@@ -5,6 +5,7 @@
   padding: 1rem 2rem;
   background-color: #17191F;
   font-size: 19px;
+  width: inherit;
 }
 
 .footer a {

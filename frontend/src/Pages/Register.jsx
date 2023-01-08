@@ -14,30 +14,34 @@ function Register() {
       estado,
       endereco,
       telefone,
-      email,
+      contatos,
       preco,
     } = infos;
 
-    await InfoFetch.post('/infos', {
-      cidade,
-      estado,
-      endereco,
-      telefone,
-      email,
-      preco,
-    });
-
+    try {
+      await InfoFetch.post('/infos', {
+        cidade,
+        estado,
+        endereco,
+        telefone,
+        contatos,
+        preco,
+      });
+    } catch (error) {
+      console.log(error);
+    }
     navigate('/');
   };
 
   const handleChange = ({ target }) => {
     const { name } = target;
     setInfos({
+      ...infos,
       [name]: target.value,
     });
   };
 
-  const arr = ['cidade', 'estado', 'endereco', 'telefone', 'email', 'preco'];
+  const arr = ['cidade', 'estado', 'endereco', 'telefone', 'contatos', 'preco'];
 
   return (
     <div className="new-info">

@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import InfoFetch from '../axios/config';
+import Footer from '../components/Footer';
+import './Register.css';
+
+const arr = ['cidade', 'estado', 'endereco', 'telefone', 'contatos', 'preco'];
 
 function Register() {
   const [infos, setInfos] = useState({});
@@ -30,7 +34,7 @@ function Register() {
     } catch (error) {
       console.log(error);
     }
-    navigate('/');
+    navigate('/list');
   };
 
   const handleChange = ({ target }) => {
@@ -40,8 +44,6 @@ function Register() {
       [name]: target.value,
     });
   };
-
-  const arr = ['cidade', 'estado', 'endereco', 'telefone', 'contatos', 'preco'];
 
   return (
     <div className="new-info">
@@ -65,6 +67,9 @@ function Register() {
         </div>
         <input type="submit" value="Enviar informações" className="btn" />
       </form>
+      <div className="footer">
+        <Footer />
+      </div>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import InfoFetch from '../axios/config';
+import Footer from '../components/Footer';
 
 function List() {
   const [info, setInfo] = useState([]);
@@ -29,8 +30,13 @@ function List() {
           <p>{post.telefone}</p>
           <p>{post.contatos}</p>
           <p>{post.preco}</p>
+          <br />
+          {/* SÓ ESTÁ AQUI PRA MELHOR VISUALIZAÇÃO */}
         </div>
       ))}
+      <div className="footer">
+        <Footer />
+      </div>
     </div>
   );
 }

@@ -10,9 +10,9 @@ function Navbar() {
         <Link to="/">DevAjuda</Link>
       </h2>
       <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/register">Cadastrar</Link></li>
-        <li><Link to="list">Locais</Link></li>
+        <li><Link to="/" className="new-btn">Home</Link></li>
+        <li><Link to="list" className="new-btn">Locais</Link></li>
+        <li><Link to="/register" className="new-btn">Cadastrar</Link></li>
       </ul>
     </nav>
   );

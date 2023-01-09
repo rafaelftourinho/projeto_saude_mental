@@ -8,9 +8,7 @@ function App() {
     <div className="App">
       <Navbar />
       <h1>Projeto Saúde Mental</h1>
-      <div className="container">
-        <Outlet />
-      </div>
+      <Outlet />
     </div>
   );
 }

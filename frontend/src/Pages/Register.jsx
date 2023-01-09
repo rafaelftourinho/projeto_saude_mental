@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import InfoFetch from '../axios/config';
-import Footer from '../components/Footer';
 import './Register.css';
 
 const arr = ['cidade', 'estado', 'endereco', 'telefone', 'contatos', 'preco'];
@@ -67,9 +66,6 @@ function Register() {
         </div>
         <input type="submit" value="Enviar informações" className="btn" />
       </form>
-      <div className="footer">
-        <Footer />
-      </div>
     </div>
   );
 }

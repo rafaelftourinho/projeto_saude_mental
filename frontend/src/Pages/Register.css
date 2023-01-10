@@ -1,1 +1,43 @@
+form {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+.form-control input {
+  width: 30rem;
+  height: 20px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 8px;
+  float: right;
+}
+
+.form-control label {
+  padding: 8px 20px;
+  margin: 8px 0;
+  float: left;
+  clear: left;
+  height: 15px;
+  text-align: left;
+}
+.btn {
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  line-height: 1em;
+  margin-top: 10px;
+  max-width: 100%;
+  min-width: 10rem;
+  padding: 14px 25px;
+  text-decoration: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}

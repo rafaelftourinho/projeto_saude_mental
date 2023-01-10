@@ -12,12 +12,12 @@ const getInfoById = async (id) => {
 };
 
 const insertInfo = async (body) => {
-  const insertId = await registrationModel
+  const newLocal = await registrationModel
     .insertInfo(body);
 
-  if (!insertId) return { type: 404, message: 'Informação não encontrada' };
+  if (!newLocal) return { type: 404, message: 'Informação não encontrada' };
 
-  const infos = await registrationModel.getInfoById(insertId);
+  const infos = await registrationModel.getInfoById(newLocal.id);
 
   return infos;
 };

@@ -4,27 +4,32 @@ const prisma = new PrismaClient();
 
 const getAllInfos = async () => {
   const infos = await prisma.local.findMany({
-    select: {
-      id: true,
-      nome: true,
-      address: {
-        select: {
-          cep: true,
-          rua: true,
-          numero: true,
-          complemento: true,
-          cidade: true,
-          estado: true,
-        },
-      },
-      contacts: {
-        select: {
-          email: true,
-          telefone: true,
-          whatsapp: true,
-        },
-      },
-      preco: true,
+    // select: {
+    //   id: true,
+    //   nome: true,
+    // address: {
+    //   select: {
+    //     cep: true,
+    //     rua: true,
+    //     numero: true,
+    //     complemento: true,
+    //     bairro: true,
+    //     cidade: true,
+    //     estado: true,
+    //   },
+    // },
+    // contacts: {
+    //   select: {
+    //     email: true,
+    //     telefone: true,
+    //     whatsapp: true,
+    //   },
+    // },
+    //   preco: true,
+    // },
+    include: {
+      address: true,
+      contacts: true,
     },
   });
 
@@ -34,27 +39,32 @@ const getAllInfos = async () => {
 const getInfoById = async (id) => {
   const result = await prisma.local.findFirst({
     where: { id },
-    select: {
-      id: true,
-      nome: true,
-      address: {
-        select: {
-          cep: true,
-          rua: true,
-          numero: true,
-          complemento: true,
-          cidade: true,
-          estado: true,
-        },
-      },
-      contacts: {
-        select: {
-          email: true,
-          telefone: true,
-          whatsapp: true,
-        },
-      },
-      preco: true,
+    // select: {
+    //   id: true,
+    //   nome: true,
+    // address: {
+    //   select: {
+    //     cep: true,
+    //     rua: true,
+    //     numero: true,
+    //     complemento: true,
+    //     bairro: true,
+    //     cidade: true,
+    //     estado: true,
+    //   },
+    // },
+    // contacts: {
+    //   select: {
+    //     email: true,
+    //     telefone: true,
+    //     whatsapp: true,
+    //   },
+    // },
+    //   preco: true,
+    // },
+    include: {
+      address: true,
+      contacts: true,
     },
   });
 
@@ -68,6 +78,7 @@ const insertInfo = async ({
   rua,
   numero,
   complemento,
+  bairro,
   cidade,
   estado,
   email,
@@ -78,24 +89,6 @@ const insertInfo = async ({
     data: {
       nome,
       preco,
-      // address: {
-      //   create: {
-      //     cep,
-      //     rua,
-      //     numero,
-      //     complemento,
-      //     cidade,
-      //     estado,
-      //     // localId: newInfo.id,
-      //   },
-      // },
-      // contacts: {
-      //   create: {
-      //     email,
-      //     telefone,
-      //     whatsapp,
-      //   },
-      // },
     },
   });
   await prisma.address.create({
@@ -104,6 +97,7 @@ const insertInfo = async ({
       rua,
       numero,
       complemento,
+      bairro,
       cidade,
       estado,
       localId: newInfo.id,

@@ -8,7 +8,7 @@ const getAllInfos = async (_req, res) => {
 const getInfoById = async (req, res) => {
   const { id } = req.params;
 
-  const info = await registrationService.getInfoById(id);
+  const info = await registrationService.getInfoById(+id);
 
   if (!info) return res.status(400).json('Informação não encontrada');
 
@@ -16,17 +16,7 @@ const getInfoById = async (req, res) => {
 };
 
 const insertInfo = async (req, res) => {
-  const {
-    cidade,
-    estado,
-    endereco,
-    telefone,
-    contatos,
-    preco,
-  } = req.body;
-
-  const info = await registrationService
-    .insertInfo(cidade, estado, endereco, telefone, contatos, preco);
+  const info = await registrationService.insertInfo(req.body);
 
   return res.status(201).json(info);
 };

@@ -1,0 +1,40 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model local {
+  id       Int    @id @default(autoincrement())
+  nome     String
+  preco    String @db.VarChar(45)
+
+  address address[]
+  contacts contacts[]
+}
+
+model address {
+  id       Int    @id @default(autoincrement())
+  cep      String 
+  rua      String
+  numero   Int
+  complemento String
+  cidade   String @db.VarChar(45)
+  estado   String @db.VarChar(45)
+  localId Int  
+
+  local local @relation(fields: [localId], references: [id], onDelete: Cascade)
+}
+
+model contacts {
+  id       Int    @id @default(autoincrement())
+  email    String
+  telefone String
+  whatsapp String
+  localId Int
+
+  local local @relation(fields: [localId], references: [id], onDelete: Cascade)
+}

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import InfoFetch from '../axios/config';
 import './Register.css';
 
-const arr = ['cidade', 'estado', 'endereco', 'telefone', 'contatos', 'preco'];
+const arr = ['Cidade', 'Estado', 'Endereco', 'Telefone', 'Contatos', 'Preco'];
 
 function Register() {
   const [infos, setInfos] = useState({});
@@ -56,7 +56,7 @@ function Register() {
               </label>
               <input
                 type="text"
-                name={info}
+                name={info.toLowerCase()}
                 id={info}
                 placeholder={`Digite o ${info}`}
                 onChange={handleChange}

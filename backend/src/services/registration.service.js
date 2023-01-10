@@ -11,11 +11,11 @@ const getInfoById = async (id) => {
   return info;
 };
 
-const insertInfo = async (cidade, estado, endereco, telefone, contatos, preco) => {
+const insertInfo = async (body) => {
   const insertId = await registrationModel
-    .insertInfo(cidade, estado, endereco, telefone, contatos, preco);
+    .insertInfo(body);
 
-  if (!insertId) return { type: '', message: '' };
+  if (!insertId) return { type: 404, message: 'Informação não encontrada' };
 
   const infos = await registrationModel.getInfoById(insertId);
 

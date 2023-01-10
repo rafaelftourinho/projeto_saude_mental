@@ -15,7 +15,7 @@ const insertInfo = async (cidade, estado, endereco, telefone, contatos, preco) =
   const insertId = await registrationModel
     .insertInfo(cidade, estado, endereco, telefone, contatos, preco);
 
-  if (!insertId) return { type: '', message: '' };
+  if (!insertId) return { type: 404, message: 'Informação não encontrada' };
 
   const infos = await registrationModel.getInfoById(insertId);
 

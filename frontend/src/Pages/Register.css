@@ -1,26 +1,63 @@
-form {
+* form {
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  flex-direction: column;
 }
 
-.form-control input {
-  width: 30rem;
-  height: 20px;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border-radius: 8px;
-  float: right;
-}
-
-.form-control label {
-  padding: 8px 20px;
-  margin: 8px 0;
-  float: left;
-  clear: left;
-  height: 15px;
+label {
+  color: aliceblue;
   text-align: left;
+  display: block;
+}
+input, select {
+  display: block;
+}
+
+input {
+  height: 20px;
+  border-radius: 5px;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+}
+
+legend {
+  float: rigth;
+  text-align: left;
+}
+
+.form-group {
+  display: flex;
+  margin-left: 5rem;
+}
+
+#input_name {
+  width: 250px;
+}
+
+#input_price {
+  width: 5rem;
+}
+
+#input_cep {
+  width: 5rem;
+}
+
+#label_cep {
+  margin-left: 40px;
+}
+
+#label_estado {
+  margin-left: 40px;
+}
+
+#label_whats {
+  margin-left: 20px;
 }
 .btn {
   background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
@@ -31,6 +68,7 @@ form {
   color: #FFFFFF;
   font-family: Phantomsans, sans-serif;
   font-size: 20px;
+  justify-content: center;
   line-height: 1em;
   margin-top: 10px;
   max-width: 100%;

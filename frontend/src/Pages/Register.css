@@ -26,11 +26,6 @@ fieldset {
   width: 30rem;
 }
 
-legend {
-  float: rigth;
-  text-align: left;
-}
-
 .form-group {
   display: flex;
   margin-left: 5rem;

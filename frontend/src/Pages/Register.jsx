@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import InfoFetch from '../axios/config';
 import './Register.css';
 
-const arr = ['Cidade', 'Estado', 'Endereco', 'Telefone', 'Contatos', 'Preco'];
+const estados = ['AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT', 'MS',
+  'MG', 'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 'RS', 'RO', 'RR', 'SC', 'SP', 'SE', 'TO'];
 
 function Register() {
   const [infos, setInfos] = useState({});
@@ -67,9 +68,11 @@ function Register() {
                 Nome do(a) profissional ou Clínica
                 <input
                   type="text"
+                  name="nome"
                   className="form-control"
                   id="input_name"
                   placeholder="Nome do(a) profissional ou Clínica"
+                  onChange={handleChange}
                 />
               </label>
             </div>
@@ -80,9 +83,11 @@ function Register() {
                 Valor:
                 <input
                   type="text"
+                  name="preco"
                   className="form-control"
                   id="input_price"
                   placeholder="100,00"
+                  onChange={handleChange}
                 />
               </label>
             </div>
@@ -90,9 +95,11 @@ function Register() {
               CEP:
               <input
                 type="text"
+                name="cep"
                 className="form-control"
                 id="input_cep"
                 placeholder="05012-000"
+                onChange={handleChange}
               />
             </label>
           </div>
@@ -102,9 +109,11 @@ function Register() {
                 Rua:
                 <input
                   type="text"
+                  name="rua"
                   className="form-control"
                   id="input_street"
                   placeholder="Rua Cardoso de Almeida"
+                  onChange={handleChange}
                 />
               </label>
             </div>
@@ -112,9 +121,11 @@ function Register() {
               Número:
               <input
                 type="text"
+                name="numero"
                 className="form-control"
                 id="input_cep"
                 placeholder="547"
+                onChange={handleChange}
               />
             </label>
           </div>
@@ -124,9 +135,11 @@ function Register() {
                 Complemento:
                 <input
                   type="text"
+                  name="complemento"
                   className="form-control"
                   id="input_street"
                   placeholder="Rua Cardoso de Almeida"
+                  onChange={handleChange}
                 />
               </label>
             </div>
@@ -134,9 +147,11 @@ function Register() {
               Bairro:
               <input
                 type="text"
+                name="bairro"
                 className="form-control"
                 id="input_cep"
                 placeholder="547"
+                onChange={handleChange}
               />
             </label>
           </div>
@@ -146,16 +161,30 @@ function Register() {
                 Cidade:
                 <input
                   type="text"
+                  name="cidade"
                   className="form-control"
                   id="input_street"
                   placeholder="Rua Cardoso de Almeida"
+                  onChange={handleChange}
                 />
               </label>
             </div>
             <label id="label_estado" htmlFor="input_cep">
               Estado:
-              <select>
-                <option value="estado">Estado</option>
+              <select
+                name="estado"
+                onChange={handleChange}
+              >
+                {
+                  estados.map((item) => (
+                    <option
+                      value={item}
+                      key={item}
+                    >
+                      {item}
+                    </option>
+                  ))
+                }
               </select>
             </label>
           </div>
@@ -164,9 +193,11 @@ function Register() {
               Email:
               <input
                 type="text"
+                name="email"
                 className="form-control"
                 id="input_name"
                 placeholder="email@email.com"
+                onChange={handleChange}
               />
             </label>
           </div>
@@ -176,9 +207,11 @@ function Register() {
                 Telefone:
                 <input
                   type="text"
+                  name="telefone"
                   className="form-control"
                   id="input_tel"
                   placeholder="(11) 91234-5678"
+                  onChange={handleChange}
                 />
               </label>
             </div>
@@ -186,9 +219,11 @@ function Register() {
               WhatsApp:
               <input
                 type="text"
+                name="whatsapp"
                 className="form-control"
                 id="input_whats"
                 placeholder="(11) 98541-5623"
+                onChange={handleChange}
               />
             </label>
           </div>
